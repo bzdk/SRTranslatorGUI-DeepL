@@ -1,11 +1,10 @@
-# SRTranslatorGUI-Python
+# SRTranslatorGUI with DeepL API
 SRT files translator https://github.com/sinedie/SRTranslator
 
-# Install
+# Installation for MacOS
 
 ```
-pip install customtkinter
+brew install python-tk
+pip3 install srtranslator, customtkinter
 ```
-
-![image](https://user-images.githubusercontent.com/30755854/222003951-15aa79dd-0abe-4ed6-b980-20e017becad9.png)
 
