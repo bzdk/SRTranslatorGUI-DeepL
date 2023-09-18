@@ -170,10 +170,10 @@ def clear_data():
     file_list.clear()
 
 
-deepl_api_key = ""
-with open('deepl_api.key', 'r') as f:
-    deepl_api_key = f.read()
 
+with open('deepl_api.key', 'r') as f:
+    api_key = f.read()
+deepl_api_key = api_key.strip()
 
 languages_source={
     'Any language (detect)': 'auto', 
