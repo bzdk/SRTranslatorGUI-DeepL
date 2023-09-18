@@ -61,7 +61,7 @@ def translate_files():
     
 
 root = tk.Tk()
-root.title("SRTranslatorGUI")
+root.title("SRT Translator with DeepL API")
 root.geometry("800x600")
 root.minsize(800, 600)
 root.maxsize(800, 600)
