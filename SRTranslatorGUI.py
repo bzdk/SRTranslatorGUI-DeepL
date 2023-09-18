@@ -42,7 +42,7 @@ def translate_files():
                 srt.save(f"{os.path.splitext(filepath)[0]}[{languages_dest.get(combo_box2.get()).upper()}].srt")
                 translator.quit()
                 # Actualizar el estado del archivo en la lista y en la tabla
-                status = "Traducido"
+                status = "Translated"
                 progress = 100
                 update_file_status(index, status)
                 update_file_progress(index, progress)
@@ -52,11 +52,11 @@ def translate_files():
                 # Actualizar el estado del archivo en la lista y en la tabla
                 status = "Error"
                 update_file_status(index, status)
-                print(f"Error al traducir el archivo {name}: {str(e)}")
+                print(f"Error while translating the file {name}: {str(e)}")
 
                 num_retries += 1
                 if num_retries == max_retries:
-                    print(f"No se pudo traducir el archivo {name} después de {max_retries} intentos.")
+                    print(f"The file could not be translated {name} after {max_retries} attempts.")
 
     
 
@@ -89,12 +89,12 @@ frame = ttk.Frame(root)
 combo_box1 = ttk.Combobox(frame, values=["Any language (detect)", "Bulgarian","Chinese","Czech","Danish","Dutch","English",
  "Estonian","Finnish","French","German","Greek","Hungarian","Indonesian","Italian","Japanese","Korean","Latvian","Lithuanian","Polish",   
   "Portuguese","Romanian","Russian","Slovak","Slovenian","Spanish","Swedish","Turkish","Ukrainian"])
-combo_box1.set("Any language (detect)")
+combo_box1.set("English")
 combo_box2 = ttk.Combobox(frame, values=["Bulgarian","Chinese","Czech","Danish","Dutch","English (American)","English (British)",
  "Estonian","Finnish","French","German","Greek","Hungarian","Indonesian","Italian","Japanese","Korean","Latvian","Lithuanian","Polish",   
   "Portuguese","Portuguese (Brazilian)","Romanian","Russian","Slovak","Slovenian","Spanish","Swedish","Turkish","Ukrainian"])
-combo_box1.set("Any language (detect)")
-combo_box2.set("Spanish")
+combo_box1.set("English")
+combo_box2.set("Chinese")
 button = tk.Button(frame, text="Translate",command=translate_files)
 # Colocar los widgets en la ventana
 combo_box1.pack(side="left")
