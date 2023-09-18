@@ -35,7 +35,7 @@ def translate_files():
         num_retries = 0
         while num_retries < max_retries:
             try:
-                translator = DeeplApi(api_key)
+                translator = DeeplApi(deepl_api_key)
                 srt = SrtFile(filepath)
                 srt.translate(translator, languages_source.get(combo_box1.get()), languages_dest.get(combo_box2.get()))
                 srt.wrap_lines()
