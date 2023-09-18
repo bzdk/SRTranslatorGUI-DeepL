@@ -4,7 +4,7 @@ import tkinter as tk
 from tkinter import ttk
 from tkinter import filedialog
 from srtranslator import SrtFile
-from srtranslator.translators.deepl import DeeplTranslator
+from srtranslator.translators.deepl_api import DeeplApi
 
 def open_folder():
     folder_path = filedialog.askdirectory(
@@ -35,7 +35,7 @@ def translate_files():
         num_retries = 0
         while num_retries < max_retries:
             try:
-                translator = DeeplTranslator()
+                translator = DeeplApi(api_key)
                 srt = SrtFile(filepath)
                 srt.translate(translator, languages_source.get(combo_box1.get()), languages_dest.get(combo_box2.get()))
                 srt.wrap_lines()
@@ -168,6 +168,12 @@ def clear_data():
     
     # Borra todos los elementos de la file_list
     file_list.clear()
+
+
+deepl_api_key = ""
+with open('deepl_api.key', 'r') as f:
+    deepl_api_key = f.read()
+
 
 languages_source={
     'Any language (detect)': 'auto', 
